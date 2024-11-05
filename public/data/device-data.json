@@ -1,0 +1,12 @@
+{"devices": 
+  [
+    { "dev_id": 2090, "type": 2, "online": true, "temp": 700, "cvalue": 0.7 },
+    { "dev_id": 2100, "type": 2, "online": true, "temp": 750, "cvalue": 0.6 },
+    { "dev_id": 2110, "type": 2, "online": true, "temp": 800, "cvalue": 0.65 },
+    { "dev_id": 2120, "type": 2, "online": false, "temp": 850, "cvalue": 0.75 },
+    { "dev_id": 3130, "type": 3, "online": true, "temp": 500},
+    { "dev_id": 4140, "type": 4, "online": true, "temp": 45 },
+    { "dev_id": 5150, "type": 5, "online": false, "temp": 40 },
+    { "dev_id": 1160, "type": 1, "online": true, "temp": 200 }
+  ]
+}

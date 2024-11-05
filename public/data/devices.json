@@ -1,0 +1,12 @@
+{"devices": 
+  [
+    { "dev_id": 2090, "type": 2, "name": "1号加热炉", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 },
+    { "dev_id": 2100, "type": 2, "name": "2号加热炉", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 },
+    { "dev_id": 2110, "type": 2, "name": "3号加热炉", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 },
+    { "dev_id": 2120, "type": 2, "name": "4号加热炉", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 },
+    { "dev_id": 3130, "type": 3, "name": "缓冷炉", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 },
+    { "dev_id": 4140, "type": 4, "name": "淬火槽", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 },
+    { "dev_id": 5150, "type": 5, "name": "清洗机", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 },
+    { "dev_id": 1160, "type": 1, "name": "回火炉", "consumable": 0, "rt_plot": 1, "rt_alarm": 1, "produce_report": 0 }
+  ]
+}

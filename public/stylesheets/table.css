@@ -1,0 +1,38 @@
+.new-menu {
+	background-color: rgba(52, 46, 76, 1.0);
+}
+
+.container {
+	background-color: rgba(80, 102, 128, 0.2);
+}
+
+table {
+	table-layout: auto;
+	width: 95%;
+	margin: 10px auto;
+	text-align: center;
+}
+
+caption {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+th {
+	position: sticky;
+	top: 55px;
+	background-color: rgba(110, 90, 70, 1.0);
+}
+
+tr:nth-child(odd) {
+	background-color: rgba(98, 70, 72, 0.8);
+}
+
+tr:hover {
+	background-color: rgba(100, 80, 62, 0.9);
+}
+
+#export-to-excel {
+	position: relative;
+	right: 30px;
+}

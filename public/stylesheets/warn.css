@@ -1,0 +1,83 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	background-color: rgba(80, 102, 128, 0.6);
+}
+
+.warn-container {
+	margin: 10px;
+}
+
+.status-on {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	background-color: rgba(112, 232, 68, 0.8);
+}
+
+.status-off {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	background-color: rgba(68, 82, 88, 0.8);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+	height: 50px;
+}
+
+td:nth-child(1) {
+  width: 60%;
+	text-align: center;
+}
+
+td:nth-child(2) {
+  width: 15%;
+	text-align: center;
+}
+
+td:nth-child(3) {
+  width: 25%;
+	text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(80, 60, 42, 0.9);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(40, 30, 22, 0.9);
+}
+
+tr:hover {
+	background-color: rgba(100, 80, 62, 0.9);
+}
+
+.warn-item {
+	width: 60px;
+	height: 25px;
+	margin: 5px;
+	color: rgba(212, 212, 212, 1.0);
+	background-color: rgba(32,26,16,1);
+}
+
+.warn-item:hover {
+	background-color: rgba(99,26,16,1);
+}
+
+@media screen and (max-width: 600px) {
+	.status-on,
+	.status-off {
+		width: 20px;
+		height: 20px;
+		border-radius: 10px;
+	}
+}

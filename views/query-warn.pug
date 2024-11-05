@@ -1,0 +1,40 @@
+extends query-layout
+
+block container
+  div(class='menu menu-pos')
+    input(type='image', src='/images/Home.png' class='image-item')
+    button(class='menu-item active-item') 报警
+  div(class='container')
+    table(id='main-table')
+      caption #{devicename}
+        thead
+          tr
+            th 序号
+            th 时间
+            th 内容
+        tbody
+          if warnarray.length
+            - var index = 1
+            each warn in warnarray
+              tr 
+                td #{index}
+                td #{warn.take_time_formated}
+                td #{warn.name}
+              - index++
+          else
+            tr 
+              td
+              td There are no warns
+              td
+        if warnarray.length
+          tfoot
+            tr 
+              td(colspan='3')
+                button(id='export-to-excel', disabled=(warnarray.length>0? false:true)) 导出
+                button(id='prev-page', disabled=(pageinfo.currentpage===1? true:false)) 上一页
+                span(id='current-page') 第#{pageinfo.currentpage}页
+                span(id='total-page') 共#{pageinfo.pagecount}页
+                button(id='next-page', disabled=(pageinfo.currentpage>=pageinfo.pagecount? true:false)) 下一页
+block scriptfile
+  <script src="/javascripts/xlsx.js"></script>
+  <script src="/javascripts/query-warn-script.js"></script>

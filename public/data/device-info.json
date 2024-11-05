@@ -1,0 +1,19 @@
+{"datalist": 
+  [
+    { "name": "主控设定温度", "value": 950, "unit": "℃" },
+    { "name": "主控实际温度", "value": 940, "unit": "℃" },
+    { "name": "一区实际温度", "value": 942, "unit": "℃" },
+    { "name": "二区实际温度", "value": 940, "unit": "℃" },
+    { "name": "三区实际温度", "value": 938, "unit": "℃" },
+    { "name": "四区实际温度", "value": 936, "unit": "℃" },
+    { "name": "炉压", "value": 5, "unit": "KPa" },
+    { "name": "碳势", "value": 1, "unit": "%Cp" },
+		{ "name": "丙烷流量", "value": 1, "unit": "m3/h" },
+		{ "name": "氮气流量", "value": 1, "unit": "m3/h" },
+		{ "name": "程序运行", "value": true, "unit": "" },
+		{ "name": "炉盖升到位", "value": false, "unit": "" },
+		{ "name": "炉盖降到位", "value": true, "unit": "" },
+		{ "name": "炉盖开到位", "value": false, "unit": "" },
+		{ "name": "炉盖关到位", "value": true, "unit": "" }
+  ]
+}

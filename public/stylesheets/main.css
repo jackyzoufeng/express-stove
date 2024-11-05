@@ -1,0 +1,60 @@
+html {
+	background-color: rgba(10, 10, 10, 0.8);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+	color: rgba(212, 212, 212, 1.0);
+}
+
+.main-container {
+	display: grid;
+	grid-template-rows: 50px auto;
+}
+
+.menu {
+	display: flex;
+	background-color: rgba(52, 46, 76, 0.6);
+}
+
+.menu-pos {
+  position: sticky;
+  top: 0px;
+}
+
+.image-item {
+	width: 50px;
+	height: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.menu-item {
+	width: 20vw;
+	height: 50px;
+	background-color: rgba(56, 36, 46, 1);
+	font-size: 1.5em;
+	color: white;
+	border: none;
+	border-bottom: 3px solid rgba(80, 69, 55, 0.5);
+}
+
+.menu-item:hover {
+	background-color: rgba(99,26,16,1);
+}
+
+button[class~="menu-item"]:hover {
+	background-color: rgba(99,26,16,1);
+}
+
+.active-item {
+	background-color: rgba(72,66,16,1);
+	border-bottom: 3px solid rgba(160, 138, 110, 1);
+}
+
+@media screen and (max-width: 600px) {
+	.menu-item {
+		font-size: 1em;
+	}
+}

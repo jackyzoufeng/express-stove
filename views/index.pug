@@ -1,0 +1,30 @@
+extends layout
+
+block container
+  if devicearray.length
+    each device in devicearray
+      dev(class='stove', id='dev'+device.dev_id, onclick="window.location.href='./deviceinfo/"+device.dev_id+'/devicename/'+`${encodeURI(device.name)}'`)
+        dev(class='devinfo devimginfo')
+          if device.type === 1
+            img(src='/images/hhl.png')
+          else if device.type === 2
+            img(src='/images/stl.png')
+          else if device.type === 3
+            img(src='/images/hll.png')
+          else if device.type === 4
+            img(src='/images/zhc.png')
+          else if device.type === 5
+            img(src='/images/qxj.png')
+        dev(class='devinfo devtxtinfo')
+          span #{device.name}
+          span(id='name'+device.dev_id)
+        dev(class='devinfo devtxtinfo')
+          if device.type === 2
+            span(id='data'+device.dev_id) 温度:--℃ 碳势:--%Cp
+          else
+            span(id='data'+device.dev_id) 温度:--℃
+  else
+    p There are no devices
+    
+block scriptfile
+  script(src='/javascripts/index-device-script.js')

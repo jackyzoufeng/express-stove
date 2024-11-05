@@ -1,0 +1,67 @@
+html {
+	background-color: rgba(10, 10, 10, 0.8);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+	color: rgba(212, 212, 212, 1.0);
+}
+
+.main-container {
+	display: grid;
+	grid-template-columns: 150px auto;
+}
+
+.menu {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(52, 46, 76, 0.6);
+}
+
+.menu-pos {
+  position: sticky;
+  top: 0;
+}
+
+.menu-item {
+	width: 150px;
+	height: 50px;
+	background-color: rgba(56, 36, 46, 1);
+	font-size: 1.5em;
+	color: white;
+	border: none;
+	border-right: 3px solid rgba(80, 69, 55, 0.5);
+}
+
+.menu-item:hover {
+	background-color: rgba(99,26,16,1);
+}
+
+button[class~="menu-item"]:hover {
+	background-color: rgba(99,26,16,1);
+}
+
+.active-item {
+	background-color: rgba(72,66,16,1);
+	border-right: 3px solid rgba(160, 138, 110, 1);
+}
+
+@media screen and (max-width: 600px) {
+	.main-container {
+		grid-template-columns: 1fr;
+	}
+	.menu {
+		height: auto;
+		flex-direction: row;
+	}
+	.menu-item {
+		border: none;
+		border-bottom: 3px solid rgba(80, 69, 55, 0.5);
+		font-size: 1.2em;
+	}
+	.active-item {
+		border-bottom: 3px solid rgba(160, 138, 110, 1);
+	}
+}

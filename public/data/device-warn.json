@@ -1,0 +1,11 @@
+{"warnlist": 
+  [
+    { "name": "风机冷却水流量故障", "value": true },
+    { "name": "炉膛压力低报警", "value": true },
+    { "name": "马弗冷却水流量故障", "value": true },
+    { "name": "炉盖冷却水流量故障", "value": true },
+    { "name": "空气压力低报警", "value": true },
+    { "name": "冷却水压力低报警", "value": true },
+    { "name": "风机水流量故障", "value": true }
+  ]
+}

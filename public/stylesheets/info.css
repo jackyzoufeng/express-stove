@@ -1,0 +1,76 @@
+.container {
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr;
+	background-color: rgba(80, 102, 128, 0.6);
+}
+
+.info-container {
+	margin: 10px;
+	border-right: 4px solid rgba(166, 120, 78, 0.9);
+	padding-right: 20px;
+}
+
+.switch-container {
+	margin: 10px;
+}
+
+.status-on {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	background-color: rgba(112, 232, 68, 0.8);
+}
+
+.status-off {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	background-color: rgba(68, 82, 88, 0.8);
+}
+
+.unit-color {
+	color: rgba(92, 162, 226, 1.0);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+	height: 50px;
+}
+
+td:nth-child(1) {
+  width: 70%;
+	text-align: center;
+}
+
+td:nth-child(2) {
+  width: 30%;
+	text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(80, 60, 42, 0.9);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(40, 30, 22, 0.9);
+}
+
+tr:hover {
+	background-color: rgba(100, 80, 62, 0.9);
+}
+
+@media screen and (max-width: 600px) {
+	.status-on,
+	.status-off {
+		width: 20px;
+		height: 20px;
+		border-radius: 10px;
+	}
+}

@@ -1,0 +1,45 @@
+extends layout
+
+block container
+  form(method='POST')
+    h1 查询选项
+    fieldset
+      legend 选择设备
+      ul(class='dev-container')
+        if devicearray.length
+          - var index = 1
+          each device in devicearray
+            li
+              input(type='radio', id='stove_dev_'+index, name='selected_dev', value=device.dev_id, checked=(index===1 ? true : false))
+              label(for='stove_dev_'+index) #{device.name}
+            - index++
+    fieldset
+      legend 选择起止时间
+      ul(class='date-container')
+        li
+          label(for='begin_date_1', style='margin-right:5px') 开始时间
+          input(type='date', id='begin_date_1', name='begin_date_1', style='margin-right:5px', value=selectdate.begindate, required='true')
+          input(type='time', id='begin_time_1', name='begin_time_1', value=selectdate.begintime, required='true')
+        li
+          label(for='end_date_1', style='margin-right:5px') 结束时间
+          input(type='date', id='end_date_1', name='end_date_1', style='margin-right:5px', value=selectdate.enddate, required='true')
+          input(type='time', id='end_time_1', name='end_time_1', value=selectdate.endtime, required='true')
+    fieldset
+      legend 选择查询类型
+      ul(class='type-container')
+        li
+          input(type='radio', id='dev_data_1', name='selected_type', value='report_data', checked=true)
+          label(for='dev_data_1') 报表数据
+        li
+          input(type='radio', id='dev_data_2', name='selected_type', value='warn_data')
+          label(for='dev_data_2') 报警数据
+    section
+      p
+        button(type='submit') 查询
+  if errors
+    ul
+      for error in errors
+        li!= error
+
+block scriptfile
+  script(src='/javascripts/index-query-script.js')
