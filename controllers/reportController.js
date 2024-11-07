@@ -3,6 +3,8 @@ var async = require("async");
 const ReportData = require("../models/reportdata");
 const device_controller = require("./deviceController.js");
 const xlsx = require('node-xlsx');
+const fs = require('fs');
+var path = require('path');
 
 var lastQueryReportPostParam = null;
 var lastQueryReportCount = 0;
@@ -49,7 +51,6 @@ function showReportPage(req, res, next) {
         return next(err);
       }
       const resolved_data = device_controller.resolver(lastQueryReportPostParam.selected_dev, list_reportdata);
-      console.log(resolved_data);
       var pageobj = {};
       pageobj.currentpage = currentReportPage;
       pageobj.pagecount = Math.ceil(lastQueryReportCount/reportsCountPerPage);
@@ -130,5 +131,26 @@ exports.query_report_curve_get = asyncHandler(async (req, res, next) => {
     res.send("lastQueryReportPostParam is null");
   } else {
     res.render('query-report-curve', { title: '', secondcss: '/stylesheets/curve.css'});
+  }
+});
+
+exports.query_report_curve_data_get = asyncHandler(async (req, res, next) => {
+  if (lastQueryReportPostParam === null) {
+    res.send("lastQueryReportPostParam is null");
+  } else {
+    var beginDate = new Date(lastQueryReportPostParam.begin_date_1 + "T" + lastQueryReportPostParam.begin_time_1);
+    var endDate = new Date(lastQueryReportPostParam.end_date_1 + "T" + lastQueryReportPostParam.end_time_1);
+    ReportData['Report'+lastQueryReportPostParam.selected_dev]
+      .where('take_time').gte(beginDate)
+      .where('take_time').lte(endDate)
+      .sort({'take_time':1}) //order by desc when value is -1 or asc when value is 1
+      .exec(function (err, list_reportdata) {
+        if (err) {
+          return next(err);
+        }
+        var resolved_data = device_controller.resolverforcurve(lastQueryReportPostParam.selected_dev, list_reportdata);
+        resolved_data.devname = lastQueryReportPostParam.selected_dev;
+        res.json(resolved_data);
+      });
   }
 });

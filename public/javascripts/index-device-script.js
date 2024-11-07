@@ -11,6 +11,7 @@ function getDeviceInfo() {
 	    return response.json();
 	  })
 	  .then((json) => {
+      console.log(json);
 	    updateInfo(json);
 	  })
 	  //.catch((error) => {

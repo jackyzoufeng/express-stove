@@ -7,3 +7,9 @@ Reference:
 
 3.Reference for Node Buffer
   https://local.blog.csdn.net/article/details/135993738
+  
+4.Implement restful api in express
+  https://www.jianshu.com/p/5f3fb847997a
+  
+5.Get data from restful api by fetch method
+  https://cloud.tencent.com/developer/article/1907987

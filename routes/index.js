@@ -3,19 +3,25 @@ const fs = require('fs');
 var router = express.Router();
 const query_controller = require("../controllers/queryController");
 const report_controller = require("../controllers/reportController");
+var path = require('path');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  var data = fs.readFileSync('./public/data/devices.json', 'utf-8');
-  const devicelist = JSON.parse(data);
-  res.render('index', { title: '', secondcss: '/stylesheets/index.css', pagename: 'index', devicearray: devicelist.devices}, function(err, html) {
-    if (err) {
-      //console.error('Error rendering the template:', err);
-      return res.status(500).send('Error rendering the template');
-    }
-    //console.log(html);
-    res.send(html);
-  });
+  try{
+    var filepath = path.resolve(__dirname, "../public/data/devices.json");
+    var data = fs.readFileSync(filepath, 'utf-8');
+    const devicelist = JSON.parse(data);
+    res.render('index', { title: '', secondcss: '/stylesheets/index.css', pagename: 'index', devicearray: devicelist.devices}, function(err, html) {
+      if (err) {
+        //console.error('Error rendering the template:', err);
+        return res.status(500).send('Error rendering the template');
+      }
+      //console.log(html);
+      res.send(html);
+    });
+  }catch(e){
+    res.send(e);
+  }
 });
 
 router.get('/query', query_controller.query_get);
@@ -31,6 +37,8 @@ router.get('/query/warn-export', query_controller.query_warn_export_get);
 router.get('/query/report', report_controller.query_report_get);
 
 router.get('/query/report-curve', report_controller.query_report_curve_get);
+
+router.get('/query/report-curve-data', report_controller.query_report_curve_data_get);
 
 router.get('/query/report-nextpage', report_controller.query_report_nextpage_get);
 
