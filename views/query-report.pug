@@ -1,0 +1,35 @@
+extends query-layout
+
+block container
+  div(class='menu menu-pos')
+    input(type='image', src='/images/Home.png' class='image-item')
+    button(class='menu-item active-item') 报表
+    button(class='menu-item') 曲线
+  div(class='container')
+    table(id='main-table')
+      caption #{devicename}
+      thead 
+        tr 
+          each n in dataarray.name
+            th #{n}
+      tbody
+        if dataarray.data.length 
+          each da in dataarray.data
+            tr 
+              each d in da 
+                td #{d}
+        else 
+          tr 
+            td(colspan=dataarray.name.length) There are no data
+      if dataarray.data.length
+        tfoot
+          tr 
+            td(colspan=dataarray.name.length)
+              button(id='export-to-excel', disabled=(dataarray.data.length>0? false:true)) 导出
+              button(id='prev-page', disabled=(pageinfo.currentpage===1? true:false)) 上一页
+              span(id='current-page') 第#{pageinfo.currentpage}页
+              span(id='total-page') 共#{pageinfo.pagecount}页
+              button(id='next-page', disabled=(pageinfo.currentpage>=pageinfo.pagecount? true:false)) 下一页
+            
+block scriptfile
+  <script src="/javascripts/query-report-script.js"></script>

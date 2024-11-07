@@ -1,0 +1,12 @@
+extends query-layout
+
+block container
+  div(class='menu menu-pos')
+    input(type='image', src='/images/Home.png' class='image-item')
+    button(class='menu-item') 报表
+    button(class='menu-item active-item') 曲线
+  div(class='container')
+    div(id='main-curve')
+block scriptfile
+  <script src="/javascripts/echarts.js"></script>
+  <script src="/javascripts/query-report-curve-script.js"></script>

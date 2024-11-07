@@ -23,9 +23,7 @@ block container
               - index++
           else
             tr 
-              td
-              td There are no warns
-              td
+              td(colspan='3') There are no warns
         if warnarray.length
           tfoot
             tr 
@@ -36,5 +34,4 @@ block container
                 span(id='total-page') 共#{pageinfo.pagecount}页
                 button(id='next-page', disabled=(pageinfo.currentpage>=pageinfo.pagecount? true:false)) 下一页
 block scriptfile
-  <script src="/javascripts/xlsx.js"></script>
   <script src="/javascripts/query-warn-script.js"></script>
