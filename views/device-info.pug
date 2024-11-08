@@ -1,0 +1,25 @@
+extends device-layout
+
+block container
+  div(class='info-container')
+    table(class='info-table')
+      if tables.length
+        each data in tables
+          tr 
+            td #{data.name}
+            td #{data.value} 
+              span(class='unit-color') #{data.unit}
+  div(class='switch-container')
+    table(class='switch-table')
+      if switchs.length
+        each data in switchs
+          tr 
+            td #{data.name}
+            if data.value 
+              td
+                span(class='status-on')
+            else 
+              td
+                span(class='status-off')
+
+block scriptfile

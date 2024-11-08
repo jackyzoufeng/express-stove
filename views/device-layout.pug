@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href=secondcss)
+  body
+    div(class='main-container')
+      div(class='menu menu-pos')
+        input(type='image', src='/images/Home.png' class='image-item')
+        button(class=(pagename==='info' ? 'menu-item active-item' : 'menu-item')) 设备详情
+        button(class=(pagename==='curve' ? 'menu-item active-item' : 'menu-item')) 实时曲线
+        button(class=(pagename==='warn' ? 'menu-item active-item' : 'menu-item')) 报警信息
+      div(class='container')
+        block container
+    script var paramobj = '#{param}';
+    script(src='/javascripts/device-script.js')
+    block scriptfile

@@ -4,6 +4,7 @@ var router = express.Router();
 const query_controller = require("../controllers/queryController");
 const report_controller = require("../controllers/reportController");
 var path = require('path');
+const deviceinfo_controller = require("../controllers/deviceInfoController");
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
@@ -46,8 +47,11 @@ router.get('/query/report-prevpage', report_controller.query_report_prevpage_get
 
 router.get('/query/report-export', report_controller.query_report_export_get);
 
-router.get('/deviceinfo/:devid/devicename/:name', function(req, res, next) {
-  res.send(req.params.devid+req.params.name);
-});
+router.get('/deviceinfo/:devid/devicename/:name', deviceinfo_controller.device_info_get);
+
+router.get('/devicecurve/:devid/devicename/:name', deviceinfo_controller.device_curve_get);
+router.post('/devicecurve/currentdata', deviceinfo_controller.device_curve_post);
+
+router.get('/devicewarn/:devid/devicename/:name', deviceinfo_controller.device_warn_get);
 
 module.exports = router;

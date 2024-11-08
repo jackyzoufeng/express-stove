@@ -1,0 +1,17 @@
+extends device-layout
+
+block container
+  div(class='warn-container')
+    table(class='warn-table')
+      if warns.length 
+        each warn in warns
+          tr(id=warn.id)
+            td #{warn.name}
+            td 
+              span(class='status-on')
+            td 
+              button(class='warn-item', onclick='funclose("'+warn.id+'")') 关闭
+              button(class='warn-item', onclick='fundelete("'+warn.id+'")') 删除
+
+block scriptfile
+  script(src='/javascripts/device-warn-script.js')
